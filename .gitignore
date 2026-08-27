@@ -1,0 +1,42 @@
+# R user-specific files
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+
+# RStudio project files
+.Rproj.user/
+*.Rproj
+
+# R package build and check files
+/*.tar.gz
+/*.Rcheck/
+
+# Knitted documents and generated figures
+*.html
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Common cache and temporary files
+cache/
+figure/
+*.aux
+*.log
+*.out
+*.toc
+*.swp
+*.swo
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Secrets and local environment files
+.Renviron
+.env
+.env.*
+!.env.example
