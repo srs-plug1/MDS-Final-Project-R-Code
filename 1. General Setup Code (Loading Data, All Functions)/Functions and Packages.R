@@ -1,30 +1,42 @@
 
 ## All Imports ##
 
-library(glue)
-library(rlang)
-library(rlist)
-library(tidyverse)
-library(DescTools)
-library(naniar)
-library(patchwork)
-library(bio3d)
-library(timeplyr)
-library(hydroTSM)
-library(corrplot)
-library(forecast)
-library(TTR)
-library(tidyquery)
-library(plotly)
-library(reshape2)
-library(fabricatr)
-library(VGAM)
-library(MASS)
-library(effsize)
-library(hydroeval)
-library(hydroGOF)
-library(Metrics)
-library(fmsb)
+# Define package list
+packages <- c(
+  "glue",
+  "rlang",
+  "rlist",
+  "tidyverse",
+  "DescTools",
+  "naniar",
+  "patchwork",
+  "bio3d",
+  "timeplyr",
+  "hydroTSM",
+  "corrplot",
+  "forecast",
+  "TTR",
+  "tidyquery",
+  "plotly",
+  "reshape2",
+  "fabricatr",
+  "VGAM",
+  "MASS",
+  "effsize",
+  "hydroeval",
+  "hydroGOF",
+  "Metrics",
+  "fmsb"
+)
+
+# Identify and install any missing packages
+new_packages <- packages[!(packages %in% installed.packages()[, "Package"])]
+if (length(new_packages) > 0) {
+  install.packages(new_packages)
+}
+
+# Load all packages
+invisible(lapply(packages, library, character.only = TRUE))
 
 
 ## All Functions ##
