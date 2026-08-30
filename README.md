@@ -12,19 +12,19 @@ The files "Functions and Packages.R" and "Loading Data (23.08.2026).R" contain a
 Some of the files for each research objective may need to be run before others can be. The recommended order is as follows:
 
 ### RO1 (order not critical):
-RO1 - Sensitivity Analysis Part A (test_mit)
-RO1 - Sensitivity Analysis Part B (Performance Metrics)
-RO1 - Comparison with Dunkerley (2008)
+- RO1 - Sensitivity Analysis Part A (test_mit)
+- RO1 - Sensitivity Analysis Part B (Performance Metrics)
+- RO1 - Comparison with Dunkerley (2008)
 
 ### RO2:
-RO2 - Calculating Event Metrics [Must be run before the following]
-RO2 - Statistical Tests (Final Version)
-RO2 - Effect of Event Characteristics, Correlation Tests
-RO2 - All Figures, In Report
+- RO2 - Calculating Event Metrics [Must be run before the following]
+- RO2 - Statistical Tests (Final Version)
+- RO2 - Effect of Event Characteristics, Correlation Tests
+- RO2 - All Figures, In Report
 
 ### RO3:
-RO3 - Find a Period to Study, Neat Version
-RO3 - Calibration of Soil Moisture (EDA)
-RO3 - Calibration of Soil Moisture (Scaling)
-RO3 - Mass Balance Lysimeters 3, 4, and 7
-RO3 - Soil Moisture Halves
+- RO3 - Find a Period to Study, Neat Version
+- RO3 - Calibration of Soil Moisture (EDA)
+- RO3 - Calibration of Soil Moisture (Scaling)
+- RO3 - Mass Balance Lysimeters 3, 4, and 7
+- RO3 - Soil Moisture Halves
