@@ -12,7 +12,7 @@ L4_rain5 <- L4_rain5 %>% dplyr::select(time, everything())
 L7_rain5 <- L7_rain5 %>% dplyr::select(time, everything())
 L8_rain5 <- L8_rain5 %>% dplyr::select(time, everything())
 
-rain5 <- combine_data(list(L3_rain5, L4_rain5, L7_rain5, L8_rain5), c("L3_rain", "L4_rain", "L7_rain", "L8_rain"))
+rain5 <- combine_data(list(L3_rain5, L4_rain5, L7_rain5, L8_rain5))
 
 vis_miss(rain5) +
   theme(plot.margin = margin(t = 40)) +
@@ -25,7 +25,7 @@ rainHR2 <- aggregate_data(rain5, 5, 60, 3)
 rainHR3 <- aggregate_data(rain5, 5, 60, 4)
 rainHR4 <- aggregate_data(rain5, 5, 60, 5)
 
-rainHR <- combine_data(list(rainHR1, rainHR2, rainHR3, rainHR4), c("l3", "l4", "l7", "l8"))
+rainHR <- combine_data(list(rainHR1, rainHR2, rainHR3, rainHR4))
 
 
 
@@ -42,7 +42,7 @@ L4_rain60 <- L4_rain60 %>% dplyr::select(time, everything())
 L7_rain60 <- L7_rain60 %>% dplyr::select(time, everything())
 L8_rain60 <- L8_rain60 %>% dplyr::select(time, everything())
 
-rain60 <- combine_data(list(L3_rain60, L4_rain60, L7_rain60, L8_rain60), c("L3_rain", "L4_rain", "L7_rain", "L8_rain"))
+rain60 <- combine_data(list(L3_rain60, L4_rain60, L7_rain60, L8_rain60))
 
 vis_miss(rain60) +
   theme(plot.margin = margin(t = 40)) +
@@ -65,7 +65,7 @@ L4_rainDL <- L4_rainDL %>% dplyr::select(time, everything())
 L7_rainDL <- L7_rainDL %>% dplyr::select(time, everything())
 L8_rainDL <- L8_rainDL %>% dplyr::select(time, everything())
 
-rainDL <- combine_data(list(L3_rainDL, L4_rainDL, L7_rainDL, L8_rainDL), c("L3_rain", "L4_rain", "L7_rain", "L8_rain"))
+rainDL <- combine_data(list(L3_rainDL, L4_rainDL, L7_rainDL, L8_rainDL))
 
 vis_miss(rainDL) +
   theme(plot.margin = margin(t = 40)) +
@@ -97,9 +97,18 @@ L4_outB <- L4_outB %>% dplyr::select(time, everything())
 L7_outB <- L7_outB %>% dplyr::select(time, everything())
 L8_outB <- L8_outB %>% dplyr::select(time, everything())
 
+colnames(L3_outA)[2] <- "L3_outA"
+colnames(L3_outB)[2] <- "L3_outB"
+colnames(L4_outA)[2] <- "L4_outA"
+colnames(L4_outB)[2] <- "L4_outB"
+colnames(L7_outA)[2] <- "L7_outA"
+colnames(L7_outB)[2] <- "L7_outB"
+colnames(L8_outA)[2] <- "L8_outA"
+colnames(L8_outB)[2] <- "L8_outB"
+
 # Outflow aggregate
 
-out5 <- combine_data(list(L3_outA, L3_outB, L4_outA, L4_outB, L7_outA, L7_outB, L8_outA, L8_outB), c("L3_outA", "L3_outB", "L4_outA", "L4_outB", "L7_outA", "L7_outB", "L8_outA", "L8_outB"))
+out5 <- combine_data(list(L3_outA, L3_outB, L4_outA, L4_outB, L7_outA, L7_outB, L8_outA, L8_outB))
 
 outHR3A <- aggregate_data(out5, 5, 60, 2)
 outHR3B <- aggregate_data(out5, 5, 60, 3)
@@ -110,7 +119,8 @@ outHR7B <- aggregate_data(out5, 5, 60, 7)
 outHR8A <- aggregate_data(out5, 5, 60, 8)
 outHR8B <- aggregate_data(out5, 5, 60, 9)
 
-outHR <- combine_data(list(outHR3A, outHR3B, outHR4A, outHR4B, outHR7A, outHR7B, outHR8A, outHR8B), c("l3A", "l3B", "l4A", "l4B", "l7A", "l7B", "l8A", "l8B"))
+outHR <- combine_data(list(outHR3A, outHR3B, outHR4A, outHR4B, outHR7A, outHR7B, outHR8A, outHR8B))
+colnames(outHR)[2:9] <- c("l3A", "l3B", "l4A", "l4B", "l7A", "l7B", "l8A", "l8B")
 
 vis_miss(outHR) +
   theme(plot.margin = margin(t = 40)) +
@@ -704,7 +714,7 @@ WS_solarHR <- aggregate_data_mean(WS_solar15, 15, 60, 2)
 colnames(WS_solarHR)[2] <- "WS_solarHR"
 
 ## DDF TABLE
-ddf_table <- read.csv("C:\\Users\\sophi\\OneDrive - Durham University\\Documents\\I guess I have a Durham OneDrive now\\Project\\Downloaded Data\\Return Periods v2.csv")
+ddf_table <- read.csv("1. General Setup Code (Loading Data, All Functions)/1. Downloaded Data/Return Periods v2.csv")
 ddf_table_ml <- convert_mm_ml(ddf_table, c(seq(3, 31)))
 
 ## EVAPOTRANSPIRATION:

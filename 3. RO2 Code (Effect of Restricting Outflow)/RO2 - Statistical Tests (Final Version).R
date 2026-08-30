@@ -221,9 +221,9 @@ cliff.delta(out_met10_large$percent_capacity_at_peak_A, out_met10_large$percent_
 
 
 # 40 cm (MIDDLE), percentage of capacity reached at peak soil moisture
-shapiro.test(out_met40_large_large$percent_capacity_at_peak_A)
-shapiro.test(out_met40_large_large$percent_capacity_at_peak_B)
-diffs <- out_met40_large_large$percent_capacity_at_peak_A - out_met40_large_large$percent_capacity_at_peak_B
+shapiro.test(out_met40_large$percent_capacity_at_peak_A)
+shapiro.test(out_met40_large$percent_capacity_at_peak_B)
+diffs <- out_met40_large$percent_capacity_at_peak_A - out_met40_large$percent_capacity_at_peak_B
 qqnorm(diffs)
 qqline(diffs)
 hist(diffs)

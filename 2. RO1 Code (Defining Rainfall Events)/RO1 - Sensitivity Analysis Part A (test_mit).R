@@ -10,7 +10,7 @@ rainHR1 <- aggregate_data(rain5, 5, 60, 2)
 rainHR2 <- aggregate_data(rain5, 5, 60, 3)
 rainHR3 <- aggregate_data(rain5, 5, 60, 4)
 rainHR4 <- aggregate_data(rain5, 5, 60, 5)
-rainHR <- combine_data(list(rainHR1, rainHR2, rainHR3, rainHR4), c("l3", "l4", "l7", "l8"))
+rainHR <- combine_data(list(rainHR1, rainHR2, rainHR3, rainHR4))
 rainHR_ave <- average_columns(rainHR, c(2, 3, 4, 5), "rainHR")
 
 rain60_ave <- average_columns(rain60, c(2:5), "rain60")
@@ -212,7 +212,7 @@ plot_ly(data = summary_mit_6_log) %>%
 #test_threshold_function <- rainfall_events_thresh(rain60_ave, 24, 0.6)
 #test_threshold_function_events <- classify_events_thresh(test_threshold_function, 60)
 
-sens_analysis_threashold <- test_rain_threashold(rain60_ave, c(0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4), 6, 60)
+sens_analysis_threashold <- test_rain_threashold(rain60_ave, c(0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4), 6, 60, ddf_table)
 
 
 box_df_thresh <- sens_analysis_threashold[[1]]

@@ -14,7 +14,6 @@ packages <- c(
   "timeplyr",
   "hydroTSM",
   "corrplot",
-  "forecast",
   "TTR",
   "tidyquery",
   "plotly",
@@ -132,7 +131,7 @@ aggregate_data <- function(df_in, df_interval, new_interval, col_ind){
               ORDER BY time;")
       )
     }
-    df_out <- combine_data(df_list, col_ind)
+    df_out <- combine_data(df_list)
   }
   else{
     df_out <- data.frame(time = rounded_time,
@@ -435,10 +434,11 @@ convert_vwc <- function(df_in, depth){
   
   print(glue("this is the depth in m covered by the sensor: {vertical_range}"))
   
-  for(i in 1:nrow(df_in)){
+#  for(i in 1:nrow(df_in)){
     # Calculate volume in m^3, multiply by 1000 to convert to litres:
-    df_out[i, 2] <- (df_in[i, 2]/100)*(1*2*vertical_range)*1000
-  }
+#    df_out[i, 2] <- (df_in[i, 2]/100)*(1*2*vertical_range)*1000
+#  }
+  df_out[, 2] <- (df_in[, 2]/100)*(1*2*vertical_range)*1000
   
   return(df_out)
 }
